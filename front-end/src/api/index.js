@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'https://mern-app-app.herokuapp.com/posts' });
+const API = axios.create({ baseURL: 'https://ponevejski-mern-backend.zeet.app' });
 
 
 API.interceptors.request.use((req) => {
