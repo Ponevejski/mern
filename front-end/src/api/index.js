@@ -1,16 +1,13 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'https://ponevejski-mern-backend.zeet.app' });
-
+const API = axios.create({ baseURL: 'https://mern-app-app.herokuapp.com/' });
 
 API.interceptors.request.use((req) => {
-	if (localStorage.getItem('profile')) {
-		req.headers.Authorization = `Bearer ${
-			JSON.parse(localStorage.getItem('profile')).token
-		}`;
-	}
+  if (localStorage.getItem('profile')) {
+    req.headers.authorization = `Bearer ${JSON.parse(localStorage.getItem('profile')).token}`;
+  }
 
-	return req;
+  return req;
 });
 
 export const fetchPosts = () => API.get('/posts');
